@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>Huli</title>
+        <meta charset="utf-8">
+        <! DEFININDO A VIEWPORT !>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <! ADICIONANDO O CSS Bootstrap!>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+            
+    </head>
+    
+    
+    <body>
+       <!  MENU DO CANTO SUPERIOR !>
+       <header>
+             <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        
+                        <a class="navbar-brand" href="tela_inicial.html"><strong>Huli</strong></a>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="myNavbar">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="tela_login.html"><span class="glyphicon glyphicon-user"></span>  Cadastrar-se</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>  Entrar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+      </header>
+        <! MENU DO CANTO SUPERIOR !>
+        
+        <! CADASTRO RAPIDO !>
+
+            <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                    <div class="col-md-offset-2 col-md-8">
+                        <img src="css/HuliImage.png" class="img-responsive" alt="Imagem Responsiva">
+                    </div>
+                    <div class="col-md-7">
+                        <h2>Cadastre-se</h2>
+                    </div>
+                
+                <form action="/signup/" method="post" id="new-account">
+                    
+                    <div class="form-group">
+                        <input class="form-control input-lg" type="email" placeholder="Email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control input-lg" type="text" placeholder="Usuario" name="usuario">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control input-lg" type="password" placeholder="Senha" name="senha">
+                        
+                    </div>
+                
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-info btn-lg btn-block">Criar nova conta</button>
+                    </div>
+                </form>  
+             </div>
+
+        
+        <! CADASTRO RAPIDO !>
+        
+        
+        
+        <script src="js/jquery-3.2.0.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+        <script src="js/main.js"></script>
+        
+    </body>
+    
+</html>
