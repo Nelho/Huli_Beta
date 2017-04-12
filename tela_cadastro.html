@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>Huli</title>
+        <meta charset="utf-8">
+        <! DEFININDO A VIEWPORT !>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <! ADICIONANDO O CSS Bootstrap!>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+            
+    </head>
+    
+    
+    <body>
+       <!  MENU DO CANTO SUPERIOR !>
+       <header>
+             <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        
+                        <a class="navbar-brand" href="tela_inicial.html"><strong>Huli</strong></a>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="myNavbar">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="tela_cadastro.html"><span class="glyphicon glyphicon-user"></span>  Cadastrar-se</a></li>
+                            <li><a href="tela_login.html"><span class="glyphicon glyphicon-log-in"></span>  Entrar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+      </header>
+        <! MENU DO CANTO SUPERIOR !>
+        
+        <! CADASTRO RAPIDO !>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                </div>
+                <div class="col-sm-10 col-sm-offset-5 col-md-9 col-md-offset-2">
+                    <h1><strong>Mapeamento Sistematico</strong></h1>
+                    <p class="lead">Ao cadastrar-se no <strong>Huli</strong> você irá realizar mapeamento sistemato de forma planejada, organizada e automatizada.</p>
+                    <p> <h2>O <strong>Huli</strong> lhe ajudará nisso!</h2></p>
+                </div>
+                
+            </div>
+            
+            <div class="col-md-5">
+                    <div class="form-group">
+                    </div>
+                    
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <form method="post" action=".">
+                                <div class="form-group">
+                                    <label class="control-label" for="id_nome">Nome:</label>
+                                    <input class="form-control" type="text" id="id_nome" name="nome">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="id_sobrenome">Sobrenome:</label>
+                                    <input class="form-control" type="text" id="id_sobrenome" name="sobrenome">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="id_username">Usuario:</label>
+                                    <input class="form-control" type="text" id="id_username" name="username">
+                                </div>
+                                
+                                <div class="form-group">
+                                     <label class="control-label" for="id_password">Senha:</label>
+                                <input class="form-control" type="password" id="id_password" name="password">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="control-label" for="id_ConfirmePassword">Confirmar senha:</label>
+                                    <input class="form-control" type="ConfirmePassword" id="id_ConfirmePassword" name="ConfirmePassword">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Dados Academicos</label>
+                                    <textarea type="text" name="datos_academicos" value="" class="form-control input-lg" >
+                                    </textarea>
+                                </div>
+                                  
+                                <div class="form-group">
+                                    <label>Dados Profesionais</label>
+                                    <textarea type="text" name="datos_profesionales" value="" class="form-control input-lg" >
+                                    </textarea>
+                                </div>
+                        
+                            <button class="btn btn-lg btn-info btn-block signup-btn" type="submit">Criar conta</button>
+                            
+                        </form>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <! CADASTRO RAPIDO !>
+        
+        
+        
+        <script src="js/jquery-3.2.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+        <script src="js/main.js"></script>
+        
+    </body>
+    
+</html>
