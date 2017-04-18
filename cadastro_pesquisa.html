@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+        
+        <title>Huli</title>
+        <meta charset="utf-8">
+        <! DEFININDO A VIEWPORT !>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <! ADICIONANDO O CSS Bootstrap!>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
+            
+    </head>
+<body>
+     <header>
+            
+            <nav class="navbar navbar-inverse">
+                
+                <div class="container">
+                    
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="tela_inicial.html"><strong>Huli</strong></a>
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        
+                        
+
+                        <ul class="nav navbar-nav navbar-right">
+
+                            
+                            <li>
+                                <h6> <button type="button" class="btn btn-link">Sair</button></h6>
+                            </li>
+                            
+
+                        </ul>
+
+                    </div>
+
+                 </div>
+
+            </nav>
+
+       </header>
+
+    <div class="container">
+
+        
+        <h2><label for="id_title" class="control-label">Mapeamento Sistematico</label></h2>
+	    <div class="panel panel-primary">
+	       
+		    <div class="panel-body">
+
+                <div class="form-group">
+                    <label for="id_title" class="control-label">Título</label>
+                    <input class="form-control" id="id_title" maxlength="255" name="title" type="text">    
+                </div>
+
+                <div class="form-group">
+                    <label for="id_description" class="control-label">Descrição</label>
+                    <div class="expanding-wrapper" style="position:relative">
+                        <textarea class="form-control expanding" cols="40" id="id_description" maxlength="500" name="description" rows="4" style="margin: 0px; box-sizing: border-box; width: 100%; position: absolute; top: 0px; left: 0px; height: 100%; resize: none; overflow: auto;">  	
+                        </textarea><pre class="expanding-clone" style="margin: 0px; box-sizing: border-box; width: 100%; display: block; border: 1px solid; visibility: hidden; min-height: 90px; white-space: pre-wrap; line-height: 20px; font-size: 14px;"><br></pre></div>
+                </div>
+                
+                
+
+               <div class="form-group">
+                    <label for="id_description" class="control-label">Objetivos</label>
+                    <div class="expanding-wrapper" style="position:relative">
+                        <textarea class="form-control expanding" cols="40" id="id_description" maxlength="500" name="description" rows="4" style="margin: 0px; box-sizing: border-box; width: 100%; position: absolute; top: 0px; left: 0px; height: 100%; resize: none; overflow: auto;">  	
+                        </textarea><pre class="expanding-clone" style="margin: 0px; box-sizing: border-box; width: 100%; display: block; border: 1px solid; visibility: hidden; min-height: 90px; white-space: pre-wrap; line-height: 20px; font-size: 14px;"><br></pre></div>
+                </div>
+        <div class="panel panel-default"> 
+            <div class="panel-heading">
+                    <h3 class="panel-title">Questões de pesquisa</h3>
+            </div>
+            <div class="panel-body">
+
+			  	<div class="form-group">
+			    
+				  	<table class="table">
+						<tr>
+                            
+                            <td style="vertical-align: middle;" colspan="2">
+                                <br>
+                                <input class="form-control" type="text" name="question-description" maxlength="500" value="">
+                            </td>
+
+                            <td style="width: 180px; text-align: right; vertical-align: middle;">
+                                <br>
+                                <button type="button" class="btn btn-sm btn-success btn-inserir-question">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                    inserir
+                                </button>
+
+                                <button type="button" class="btn btn-sm btn-danger btn-remover-question">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                    remover
+                                </button>
+                            </td>
+                        </tr>
+					</table>
+
+                </div>
+			</div>
+
+        </div>
+
+        
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Seleção de Critérios</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inclusao" class="control-label">Critério de inclusão</label>
+                                <input type="text" id="inclusao" maxlength="200" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <select multiple="multiple" size="6" id="criterio-inclusao" class="form-control">
+	                    
+                                </select>                  
+                            </div>
+                            <button type="button" class="btn btn-danger btn-sm" data-target="remove-inclusao">
+                                <span class="glyphicon glyphicon-trash"></span>
+                                remover critério
+                            </button>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="exclusao" class="control-label">Critério de exclusão</label>
+                                <input type="text" id="exclusao" maxlength="200" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <select multiple="multiple" size="6" id="criterio-exclusao" class="form-control">
+	                    
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-danger btn-sm" data-target="remove-exclusao">
+                                <span class="glyphicon glyphicon-trash"></span>
+                                remover critério
+                            </button>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Seleção de Engines de Busca</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <div class="form-group">
+                        <li class="list-group-item"><label><input type="checkbox" value="">     Option 1</label></li>
+                        <li class="list-group-item"><label><input type="checkbox" value="">     Option 1</label></li>
+                        <li class="list-group-item"><label><input type="checkbox" value="">     Option 1</label></li>
+                        <li class="list-group-item"><label><input type="checkbox" value="">    Option 1</label></li>
+                        <li class="list-group-item"><label><input type="checkbox" value="">     Option 1</label></li></div>
+                        <button type="button" class="btn btn-success" data-target="selecao_engine">
+                            <span class="glyphicon glyphicon-ok"></span>
+                            Selecionar engines
+                        </button>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+    </div>
+   <div class="form-group">
+       <button type="button" class="btn btn-success" data-target="cadastrar_pesquisa">
+           <span class="glyphicon glyphicon-ok"></span>
+                          Cadastrar pesquisa
+       </button>
+       
+    </div>
+        <br>
+</body>
+</html>
