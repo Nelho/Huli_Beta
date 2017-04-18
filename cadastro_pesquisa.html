@@ -10,8 +10,7 @@
         <! ADICIONANDO O CSS Bootstrap!>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
         <!--adicionado-->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+
             
     </head>
 <body>
@@ -30,10 +29,19 @@
                         
 
                         <ul class="nav navbar-nav navbar-right">
-
+                            <br>
+                            <li>
+                               <button type="button" class="btn btn-link" data-target="configuração">
+                                   <span class="glyphicon glyphicon-cog"></span>
+                                   configurações
+                                </button>
+                            </li>
                             
                             <li>
-                                <h6> <button type="button" class="btn btn-link">Sair</button></h6>
+                               <button type="button" class="btn btn-link" data-target="sair">
+                                   <span class="glyphicon glyphicon-log-out"></span>
+                                   Sair
+                                </button>
                             </li>
                             
 
@@ -168,15 +176,10 @@
                 <div class="panel-body">
                     <ul class="list-group">
                         <div class="form-group">
-                        <li class="list-group-item"><label><input type="checkbox" value="">     Option 1</label></li>
-                        <li class="list-group-item"><label><input type="checkbox" value="">     Option 1</label></li>
-                        <li class="list-group-item"><label><input type="checkbox" value="">     Option 1</label></li>
-                        <li class="list-group-item"><label><input type="checkbox" value="">    Option 1</label></li>
-                        <li class="list-group-item"><label><input type="checkbox" value="">     Option 1</label></li></div>
-                        <button type="button" class="btn btn-success" data-target="selecao_engine">
-                            <span class="glyphicon glyphicon-ok"></span>
-                            Selecionar engines
-                        </button>
+                        <h4><li class="list-group-item"><label><input type="checkbox" value="">     ScienceDirect</label></li>
+                        <li class="list-group-item"><label><input type="checkbox" value="">     IEEE Xplore Digital Library</label></li>
+                        <li class="list-group-item"><label><input type="checkbox" value="">     ACM Digital Library</label></li>
+                        <li class="list-group-item"><label><input type="checkbox" value="">     Scopus</label></li></h4></div>
                     </ul>
                 </div>
             </div>
@@ -190,66 +193,12 @@
        
     </div>
         <br>
-
-    <script type="text/javascript">
-        var campos_max = 10;   //max de 10 campos
-
-        var x = 0;
-        //Adicionar questao de pesquisa
-        $('#add_campo').click (function(e) {
-            e.preventDefault();     //prevenir novos clicks
-            if (x < campos_max) {
-                $('#listaQuestao').append('<div class="form-group">\
-                <input class="form-control" type="text" id="questao[]" maxlength="500" value="">\
-                <button type="button" class="btn btn-sm btn-danger btn-cancel-question remover_campo">\
-                remover\
-                </button>\
-                </div>');
-                x++;
-            }
-        });
-            
-        //remover questao de pesquisa
-        $('#listaQuestao').on("click",".remover_campo",function(e) {
-                e.preventDefault();
-                $(this).parent('div').remove();
-                x--;
-        });
-
-
-        //Adicionar criterio de inclusao
-        $('#add_criterio_inclusao').click (function() {
-            if($('#inclusao').val().length > 0) {
-                $('#criterio-inclusao').append($('<option>', {
-                    value: 1,
-                    text: $('#inclusao').val()
-                }));
-                document.getElementById('inclusao').value = "";
-            }       
-        });
-
-        //Remover criterio de inclusao
-        $('#del_criterio_inclusao').click(function () {
-            $("#criterio-inclusao option:selected").remove();
-        });
-
-        //Adicionar criterio de exclusao
-        $('#add_criterio_exclusao').click (function() {
-            if($('#exclusao').val().length > 0) {
-                $('#criterio-exclusao').append($('<option>', {
-                    value: 1,
-                    text: $('#exclusao').val()
-                }));
-            }
-            document.getElementById('exclusao').value = "";
-        });
-
-        //remover criterio de exclusao
-        $('#del_criterio_exclusao').click(function () {
-            $("#criterio-exclusao option:selected").remove();
-
-        });
-
-    </script>
+        
+        
+        
+    <! ---- CHAMANDO AS CLASSES EM JAVA ----!>
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
