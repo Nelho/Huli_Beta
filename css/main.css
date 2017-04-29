@@ -1,0 +1,55 @@
+ /* Remove the navbar's default margin-bottom and rounded borders */ 
+            .navbar {
+                margin-bottom: 0;
+                border-radius: 0;
+            }
+    
+            /* Add a gray background color and some padding to the footer */
+            footer {
+                background-color: #f2f2f2;
+                padding: 25px;
+            }
+/* Remove a configuração padrão da margem e bordas da navbar */ 
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Ajusta a altura do .sidenav responsivamente */
+.row.content {
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    display: block;
+}
+
+/* Altura 100% e cor do fundo da página. */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* Configuração do footer da página */
+footer {
+    width: 100%;
+    background-color: #555;
+    color: white;
+    padding: 15px;
+    position: absolute;
+    height: 5%
+}
+
+/* Configuração do .sidenav para telas menores */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {height:auto;} 
+}
+
+/* Configurações dos botões da navbar da direita */
+#rightBarBtn {
+    width: 100%;
+}
