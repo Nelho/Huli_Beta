@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        
         <title>Huli</title>
         <meta charset="utf-8">
-        <! DEFININDO A VIEWPORT !>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <! ADICIONANDO O CSS Bootstrap!>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
-            
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+
     </head>
-    
-    
     <body>
-       <!  MENU DO CANTO SUPERIOR !>
 
-        <header>
-            
-            <nav class="navbar navbar-inverse">
-                
-                <div class="container">
-                    
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="tela_inicial.html"><strong>Huli</strong></a>
-                    </div>
-                    
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        
-                        
-
-                        <ul class="nav navbar-nav navbar-right">
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a class="navbar-brand" href="tela_inicial.html"><strong>Huli</strong></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
 
                              <form class="form-inline my-2 my-lg-0">
 
@@ -44,31 +37,25 @@
 
                         </ul>
 
-                    </div>
-
-                 </div>
-
-            </nav>
-
-       </header>
-
-        <! MENU DO CANTO SUPERIOR !>
-        
-        <! CADASTRO RAPIDO !>
-        <br><br><br>
-        <div class="conteiner">
-            <div class="col-md-6">
-                <div class="form-group">
+                    
                 </div>
-                <div class="col-sm-10 col-sm-offset-5 col-md-9 col-md-offset-2">
+            </div>
+        </nav>
+         <br><br><br>
+        <div>
+            <div class="col-md-6">
+                <div class="col-sm-10  col-md-offset-2">
                     <h1><strong>Mapeamento Sistematico</strong></h1>
-                    <p class="lead">Ao cadastrar-se no <strong>Huli</strong> você poderá realizar qualquer mapeamento sistematico de forma planejada, organizada e automatizada.</p>
+                    <blockquote>
+                        <p class="lead">Ao cadastrar-se no <strong>Huli</strong> você poderá realizar qualquer mapeamento sistematico de forma planejada, organizada e automatizada.</p>
+                    </blockquote>
+                    
                     <p> <h2>O <strong>Huli</strong> lhe ajudará nisso!</h2></p>
                 </div>
-                
+
             </div>
-            
-            <div class="col-md-5">
+            <div class="col-md-6">
+                <div class="col-sm-10 text-left">
                 <div class="panel panel-primary">
                     <div class="panel-body">
                         <form method="post" action=".">
@@ -102,16 +89,12 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
-        
-        <! CADASTRO RAPIDO !>
-        
-        
         
         <script src="js/jquery-3.2.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
         <script src="js/main.js"></script>
         
     </body>
-    
 </html>
