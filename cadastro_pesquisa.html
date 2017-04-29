@@ -2,57 +2,57 @@
 <html>
 <head>
         
-        <title>Huli</title>
+       <title>Huli - Cadastro de Pesquisa</title>
         <meta charset="utf-8">
-        <! DEFININDO A VIEWPORT !>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <! ADICIONANDO O CSS Bootstrap!>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <!--adicionado-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">
 
             
     </head>
 <body>
      <header>
-            
             <nav class="navbar navbar-inverse">
-                
-                <div class="container">
-                    
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="tela_inicial.html"><strong>Huli</strong></a>
-                    </div>
-                    
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        
+            <div class="container">
+                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+
+                    </button>
+                    <a class="navbar-brand" href="tela_inicial.html"><strong>Huli</strong></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
                         
 
-                        <ul class="nav navbar-nav navbar-right">
-                            <br>
-                            <li>
-                               <button type="button" class="btn btn-link" data-target="configuração">
-                                   <span class="glyphicon glyphicon-cog"></span>
-                                   configurações
-                                </button>
-                            </li>
+                         <ul class="nav navbar-nav">
                             
-                            <li>
-                               <button type="button" class="btn btn-link" data-target="sair">
-                                   <span class="glyphicon glyphicon-log-out"></span>
-                                   Sair
-                                </button>
-                            </li>
-                            
-
+                             <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Perfil</a></li>
+                             <li><a href="<c:url value='/mapeamento/pesquisa/list'/>"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Pesquisas</a></li>
+                        
                         </ul>
+                    
+                        <c:choose>                     	
+                            <c:when test="${existeConvite == true}">
+                                <ul class="nav navbar-nav navbar-right"><li><a href="<c:url value='/mapeamento/convite'/>"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> <span class="badge btn-warning">${quantConvites}</span> Notificação</a></li>
+                            </c:when>
+                    	<c:otherwise>                    
+                                <ul class="nav navbar-nav navbar-right"><li><a href="<c:url value='/mapeamento/convite'/>"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> Notificação</a></li>                    		
+                        </c:otherwise>
+                            </c:choose>
+                                <li><p class="navbar-text">Bem vindo:  ${nomeUser}</p></li> 
+                                <li><a href="<c:url value='/login/logout'/>"><span class="glyphicon glyphicon-log-out"></span> Sair</a></li>
+                                                 
+                        
+                    </ul>
 
                     </div>
 
-                 </div>
-
-            </nav>
-
+            </div>
+        
        </header>
 
     <div class="container">
@@ -67,22 +67,27 @@
                     <label for="id_title" class="control-label">Título</label>
                     <input class="form-control" id="id_title" maxlength="255" name="title" type="text">    
                 </div>
-
                 <div class="form-group">
                     <label for="id_description" class="control-label">Descrição</label>
                     <div class="expanding-wrapper" style="position:relative">
-                        <textarea class="form-control expanding" cols="40" id="id_description" maxlength="500" name="description" rows="4" style="margin: 0px; box-sizing: border-box; width: 100%; position: absolute; top: 0px; left: 0px; height: 100%; resize: none; overflow: auto;">  	
-                        </textarea><pre class="expanding-clone" style="margin: 0px; box-sizing: border-box; width: 100%; display: block; border: 1px solid; visibility: hidden; min-height: 90px; white-space: pre-wrap; line-height: 20px; font-size: 14px;"><br></pre></div>
+                        <textarea class="form-control" rows="3"></textarea>
                 </div>
                 
-                
+                <br>
 
                <div class="form-group">
                     <label for="id_description" class="control-label">Objetivos</label>
                     <div class="expanding-wrapper" style="position:relative">
-                        <textarea class="form-control expanding" cols="40" id="id_description" maxlength="500" name="description" rows="4" style="margin: 0px; box-sizing: border-box; width: 100%; position: absolute; top: 0px; left: 0px; height: 100%; resize: none; overflow: auto;">  	
-                        </textarea><pre class="expanding-clone" style="margin: 0px; box-sizing: border-box; width: 100%; display: block; border: 1px solid; visibility: hidden; min-height: 90px; white-space: pre-wrap; line-height: 20px; font-size: 14px;"><br></pre></div>
+                        <textarea class="form-control" rows="3"></textarea>
+                        
                 </div>
+                <br>
+                <div class="form-group">
+                    <label for="id_description" class="control-label">Palavras-chave</label>
+                    <div class="expanding-wrapper" style="position:relative">
+                        <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <br>
         <div class="panel panel-default"> 
             <div class="panel-heading">
                     <h3 class="panel-title">Questões de pesquisa</h3>
