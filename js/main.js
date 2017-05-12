@@ -1,27 +1,29 @@
-       var campos_max = 10;   //max de 10 campos
+
+    //QUESTÕES DE PESQUISA
+    var app = angular.module("myShoppingList", []); 
+    app.controller("myCtrl", function($scope) {
+    $scope.products = [];
+    $scope.addItem = function () {
+        
+        if (!$scope.addMe) {return;}        
+        if ($scope.products.indexOf($scope.addMe) == -1) {
+            $scope.products.push($scope.addMe);
+        } else {
+            $scope.errortext = "Questão de pesquisa já inserida. Por favor, insira novemente outra questão!";
+        }
+    }
+    $scope.removeItem = function (x) {
+        $scope.errortext = "";    
+        $scope.products.splice(x, 1);
+    }
+    });
+    //QUESTÕES DE PESQUISA
+
+
+
+        var campos_max = 10;   //max de 10 campos
 
         var x = 0;
-        //Adicionar questao de pesquisa
-        $('#add_campo').click (function(e) {
-            e.preventDefault();     //prevenir novos clicks
-            if (x < campos_max) {
-                $('#listaQuestao').append('<div class="form-group">\
-                <input class="form-control" type="text" id="questao[]" maxlength="500" value="">\
-                <button type="button" class="btn btn-sm btn-danger btn-cancel-question remover_campo">\
-                remover\
-                </button>\
-                </div>');
-                x++;
-            }
-        });
-            
-        //remover questao de pesquisa
-        $('#listaQuestao').on("click",".remover_campo",function(e) {
-                e.preventDefault();
-                $(this).parent('div').remove();
-                x--;
-        });
-
 
         //Adicionar criterio de inclusao
         $('#add_criterio_inclusao').click (function() {
@@ -55,3 +57,6 @@
             $("#criterio-exclusao option:selected").remove();
 
         });
+
+
+        
