@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       
+       <title>Huli - Cadastro de Mapeamento</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+          function funcHabilitar(){  
+            document.getElementById("btn_voltar").disabled= true;
+          }  
+    </script>
+        <link rel="stylesheet" href="css/main.css">
+  
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="tela_inicial.html"><strong>Huli</strong></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            Perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<c:url value='/mapeamento/pesquisa/list'/>">
+                            <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                            Pesquisas
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                        
+                    <li>
+                        <a href="<c:url value='/mapeamento/convite'/>">
+                            <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                            Notificação
+                        </a>
+                    </li>                    		
+                        
+                    <li>
+                        <p class="navbar-text">
+                            Bem vindo: Fulano
+                        </p>
+                    </li> 
+                    <li>
+                        <a href="<c:url value='/login/logout'/>">
+                            <span class="glyphicon glyphicon-log-out"></span>
+                            Sair
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+          
+</header>
+  
+    
+<div class="container-fluid text-center">    
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+            <div class="col-sm-12 well">
+                
+
+                
+                
+                 <button type="button" class="btn btn-danger" id="btn_voltar">
+                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                    Voltar
+                </button>
+                       
+              
+            </div>
+            
+            
+             
+        </div>
+    
+        <div class="col-sm-8 text-left"> 
+            <br>
+            
+            <h1><label for="id_title" class="control-label">Mapeamento Sistematico</label></h1>
+            
+            <div id="painel1">
+            
+	              
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <label for="id_title" class="control-label">Título</label>
+                        <input class="form-control" id="id_title" maxlength="255" name="title" type="text">    
+                    </div>
+                    <div class="form-group">
+                        <label for="id_description" class="control-label">Descrição</label>
+                        <div class="expanding-wrapper" style="position:relative">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label for="id_objetivos" class="control-label">Objetivos</label>
+                        <div class="expanding-wrapper" style="position:relative">
+                            <textarea class="form-control" rows="3"></textarea>
+                        
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="id_palavras" class="control-label">String de busca</label>
+                            <div class="expanding-wrapper" style="position:relative">
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <br>
+                            <div class="panel panel-default"> 
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Questões de pesquisa</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+			    
+                                        <div  ng-app="myPerguntasList" ng-controller="myCtrl">
+   
+                                            <div style=" height: 110px; overflow: auto;">   
+
+                                                <li class="list-group-item" ng-repeat="x in products">{{x}}
+                                                    <span ng-click="removeItem($index)" style="cursor:pointer;" class="pull-right">
+                                                        <span class="glyphicon glyphicon-remove"></span>
+                                                    </span>
+                        
+                                                </li>
+                                            </div>
+                                            <br>
+                        
+                                            <div>
+                                                <div class="input-group">
+                                                    <input ng-model="addMe" class="form-control" type="text" name="question-description" id="addMeInput" maxlength="500" value="">
+                                
+                                                    <span class="input-group-btn">
+                                                        <button ng-click="addItem()" class="btn btn-info" type="button">
+                                                            
+                                                            <span class="glyphicon glyphicon-plus"></span>
+                                                            Inserir
+                                                        </button>
+                                                    </span>
+                                                </div>
+                     
+                                            </div>
+                                            <br>
+                    
+                                            <p>{{errortext}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+
+        
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Seleção de Critérios</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="inclusao" class="control-label">Critério de inclusão</label>
+                                                <input type="text" id="inclusao" maxlength="200" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <select multiple="multiple" size="6" id="criterio-inclusao" class="form-control"></select>                  
+                                            </div>
+                                            <!--botao adicionado-->
+                                            <button type="button" id="add_criterio_inclusao" class="btn btn-primary btn-sm">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                                Adicionar critério
+                                            </button>
+                                            <button type="button" id="del_criterio_inclusao" class="btn btn-danger btn-sm">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                                remover critério
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="exclusao" class="control-label">Critério de exclusão</label>
+                                                <input type="text" id="exclusao" maxlength="200" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <select multiple="multiple" size="6" id="criterio-exclusao" class="form-control"></select>
+                                            </div>
+                                            <!--botao adicionado-->
+                                            <button type="button" id="add_criterio_exclusao" class="btn btn-primary btn-sm">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                                Adicionar critério
+                                            </button>
+                                            <button type="button" id="del_criterio_exclusao" class="btn btn-danger btn-sm" data-target="#criterio-exclusao">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                                remover critério
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>  
+                            </div>
+                            <br>
+                        </div>  
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            
+            
+            
+            <div id="painel2">
+                <div class="panel-body">
+
+                    <div class="panel panel-default"> 
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Adicionar colaborador</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                               
+                                <div style=" height: 250px; overflow: auto;">  
+                                <div class="controls"> 
+                                    <form role="form" autocomplete="off">
+                                        <div class=" input-group entryCG" >
+                                           
+                                            <input  class="form-control" type="email" name="fields[]" id="addMeInput" maxlength="500" value="">
+                                          
+                                            <span class="input-group-btn">
+                                                
+                                                <button class="btn btn-info btn-addCG" type="button">
+                                                  
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                            
+                                                </button>
+                                            </span>
+                                           
+                                          
+                                        </div>
+                                    </form>
+                                </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+        
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Anexar BibTex</h3>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <label for="engine1">ScienceDirect:</label>
+                            <div class="input-group">
+                                <input  class="form-control" type="file" name="bibtex" value="">
+                                
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning" type="button">
+                                        <span class="glyphicon glyphicon-paperclip"></span>
+                                        anexar
+                                    </button>
+                                </span>
+                            </div> 
+                            
+                            <br>
+                            
+                            <label for="engine2">IEEE Xplore Digital Library:</label>
+                            <div class="input-group">
+                                <input  class="form-control" type="file" name="bibtex" value="">
+                                
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning" type="button">
+                                        <span class="glyphicon glyphicon-paperclip"></span>
+                                        anexar
+                                    </button>
+                                </span>
+                            </div> 
+                            
+                            <br>
+                            
+                            <label for="engine3">ACM Digital Library:</label>
+                            <div class="input-group">
+                                <input  class="form-control" type="file" name="bibtex" value="">
+                                
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning" type="button">
+                                        <span class="glyphicon glyphicon-paperclip"></span>
+                                        anexar
+                                    </button>
+                                </span>
+                            </div>     
+                           
+                            <br>
+                            
+                            <label for="engine4">Scopus:</label>
+                            <div class="input-group">
+                                <input  class="form-control" type="file" name="bibtex" value="">
+                                
+                                <span class="input-group-btn">
+                                    <button class="btn btn-warning" type="button">
+                                        <span class="glyphicon glyphicon-paperclip"></span>
+                                        anexar
+                                    </button>
+                                </span>
+                            </div>     
+                        </div>  
+                    </div>  
+                    <br>
+                    
+                    <button id="btn_voltar" type="button" class="btn btn-success">
+                    
+                        
+                        Finalizar cadastro
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                    <br>
+                    <br>
+                </div>
+                
+            </div> 
+        
+        </div>
+        
+        <div class="col-sm-2 sidenav">
+            <div class="col-sm-12 well">
+                
+                <button type="button" class="btn btn-primary" id="btn_proximo";> 
+                    Seguir
+                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                </button>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+    
+    
+    </html>
+
+      
+     <! ---- CHAMANDO AS CLASSES EM JAVA ----!>
+    <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

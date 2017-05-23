@@ -1,10 +1,10 @@
 
     //QUESTÕES DE PESQUISA
-    var app = angular.module("myShoppingList", []); 
+    var app = angular.module("myPerguntasList", []); 
     app.controller("myCtrl", function($scope) {
     $scope.products = [];
     $scope.addItem = function () {
-        
+        $('#addMeInput').val("")
         if (!$scope.addMe) {return;}        
         if ($scope.products.indexOf($scope.addMe) == -1) {
             $scope.products.push($scope.addMe);
@@ -18,6 +18,26 @@
     }
     });
     //QUESTÕES DE PESQUISA
+
+    //COLABORADOR
+    var appColaboration = angular.module("myColaborationList", []); 
+    appColaboration.controller("myCtrlColaboration", function($scope) {
+    $scope.products = [];
+    $scope.addItem = function () {
+        
+        if (!$scope.addMe) {return;}        
+        if ($scope.products.indexOf($scope.addMe) == -1) {
+            $scope.products.push($scope.addMe);
+        } else {
+            $scope.errortext = "Colaborador já adicionado. Por favor, insira outro!";
+        }
+    }
+    $scope.removeItem = function (x) {
+        $scope.errortext = "";    
+        $scope.products.splice(x, 1);
+    }
+    });
+    //COLABORADOR
 
 
 
@@ -59,4 +79,47 @@
         });
 
 
+/* Transição de telas */
+$(document).ready(function(){
+
+    
+
+    
+    $("#btn_proximo").click(function(){
         
+        $("#painel1").slideUp("fast");
+    	$("#painel2").slideDown("fast");
+        
+    });
+    
+     $("#btn_voltar").click(function(){
+        
+        $("#painel2").slideUp("fast");
+    	$("#painel1").slideDown("fast");
+       
+    });
+    
+    
+});
+
+/* Adicionar Colaborador */
+    $(document).on('click', '.btn-addCG', function(e){
+        e.preventDefault();
+
+        var controlForm = $('.controls form:first'),
+            currentEntry = $(this).parents('.entryCG:first'),
+            newEntry = $(currentEntry.clone()).appendTo(controlForm);
+
+        newEntry.find('input').val('');
+        controlForm.find('.entryCG:not(:last) .btn-addCG')
+            .addClass('btn-remove').removeClass('btn-addCG')
+            .addClass('btn-danger').removeClass('btn-info')
+        
+            .html('<span class="glyphicon glyphicon-remove"></span>');
+    }).on('click', '.btn-remove', function(e)
+          {
+        $(this).parents('.entryCG:first').remove();
+
+        e.preventDefault();
+        return false;
+    });
